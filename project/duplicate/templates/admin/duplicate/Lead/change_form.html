@@ -1,0 +1,42 @@
+{% extends "admin/change_form.html" %}
+{%load static%}
+{% block content %}
+{{ block.super }}
+{% endblock %}
+
+{%block extrastyle%}
+{{block.super}}
+<style>
+    .submit-row{
+        display: inline;
+        background: white;
+        border: none;
+    }
+    #duplicate{
+        /* background: #205067; */
+        text-transform: uppercase;
+        margin: 0 0 0 8px;
+        background: #417690;
+        font-weight: 400;
+        border: none;
+        height: 35px;
+        color: #fff;
+        border-radius: 4px;
+    }
+</style>
+{%endblock%}
+
+{%block extrahead%}
+{{block.super}}
+<script src="{%static 'duplicate/js/change_form.js' %}"></script>
+<script src="{%static 'duplicate/js/jquery-3.3.1.min.js' %}"></script>
+{%endblock%}
+
+{% block submit_buttons_bottom %}
+{{block.super}}
+{%block submit_row%}
+<div class="submit-row">
+<button type="button"  id="duplicate">Duplicate</button>
+</div>
+{%endblock%}
+{% endblock %}
